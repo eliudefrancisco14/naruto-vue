@@ -1,52 +1,29 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div v-if="dataApi" class="col-md-6">
-        <div v-for="data in dataApi.kekkeigenkai" :key="data.id">
-          <ul>
-            <li >{{ data.name }}</li>
-            <img :src="data.characters[0].images[0]" :alt="data.name">
-          </ul>
-        </div>
-      </div>
-      <div v-else class="col-md-6">
-        Loading...
-      </div>
-    </div>
-    
+  <div class="app">
+    <SearchPerson />
   </div>
-  
 </template>
 
 <script>
-import axios from "axios";
+
+import SearchPerson from "@/components/SearchPerson.vue"
 
 export default {
   name: "App",
-  data(){
-    return {
-      dataApi: null,
-    }
-  },
-  async mounted() {
-    try {
-      const response = await axios.get("kekkei-genkai?page=1&limit=5");
-      this.dataApi = response.data;
-      console.log(response);
-    } catch (error) {
-      console.error("Erro na solicitação HTTP:", error);
-    }
-  },
+  components:{ 
+    SearchPerson
+  }
+  
 };
 </script>
 
 <style>
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Ninja Naruto', sans-serif;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0;
+  background-color: #ffe5a9;
 }
 </style>
