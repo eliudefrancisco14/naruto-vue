@@ -1,5 +1,6 @@
 <template>
   <div class="app">
+    <div class="card-top"></div>
     <SearchPerson />
   </div>
 </template>
@@ -25,5 +26,11 @@ export default {
   color: #2c3e50;
   margin-top: 0;
   background-color: #ffe5a9;
+}
+.card-top {
+  background-color: rgb(250, 141, 16);
+  width: 100%;
+  height: 50vh;
+  position: absolute;
 }
 </style>
