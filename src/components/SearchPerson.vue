@@ -79,7 +79,6 @@ export default {
         } else {
           console.log("Personagem não encontrado");
         }
-        console.log(response)
       } catch (error) {
         console.error("Erro na solicitação HTTP:", error);
       }
